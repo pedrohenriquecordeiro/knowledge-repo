@@ -47,7 +47,7 @@ count(elemento): Retorna o número de ocorrências do elemento na lista.
 get(indice, valor_padrao): Retorna o elemento na posição 'indice' ou o valor 'valor_padrao' se o índice estiver fora da lista.
 Exemplo:
 
-Python```
+```Python
 # Cria uma lista
 lista = [10, 20, 30, 40, 50]
 

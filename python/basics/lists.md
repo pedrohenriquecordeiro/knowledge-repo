@@ -20,7 +20,7 @@ List of mixed data types:
 ```Python
 mixed_list = ["hello", 2.5, True]
 ```
-Accessing Elements
+#### Accessing Elements
 
 Elements in a list are accessed using their index, which starts from 0. The first element has index 0, the second element has index 1, and so on. You can use square brackets [] to access elements by their index.
 
@@ -29,7 +29,7 @@ fruits = ["apple", "banana", "orange"]
 first_fruit = fruits[0]  # first_fruit will be "apple"
 last_fruit = fruits[2]  # last_fruit will be "orange"
 ```
-Negative Indexing
+#### Negative Indexing
 
 Python also supports negative indexing, which starts from the end of the list. -1 refers to the last element, -2 refers to the second-last element, and so on.
 
@@ -38,7 +38,7 @@ fruits = ["apple", "banana", "orange"]
 last_fruit = fruits[-1]  # last_fruit will be "orange"
 second_last_fruit = fruits[-2]  # second_last_fruit will be "banana"
 ```
-List Length
+#### List Length
 
 The len() function determines the number of elements in a list.
 
@@ -46,26 +46,16 @@ The len() function determines the number of elements in a list.
 fruits = ["apple", "banana", "orange"]
 number_of_fruits = len(fruits)  # number_of_fruits will be 3
 ```
-Modifying Lists
+#### Modifying Lists
 
 Lists are mutable, meaning you can change their content after creation. Here are some common methods for modifying lists:
 
-append(x): Adds an element x to the end of the list.
-insert(i, x): Inserts an element x at a specific index i.
-remove(x): Removes the first occurrence of the element x from the list.
-pop(i): Removes the element at index i (defaults to the last element if no index is provided) and returns it.
-Iterating Through Lists
+* append(x): Adds an element x to the end of the list.
+* insert(i, x): Inserts an element x at a specific index i.
+* remove(x): Removes the first occurrence of the element x from the list.
+* pop(i): Removes the element at index i (defaults to the last element if no index is provided) and returns it.
 
-You can iterate through the elements of a list using a for loop:
-
-```Python
-fruits = ["apple", "banana", "orange"]
-for fruit in fruits:
-  print(fruit)
-```
-This code will print each fruit on a new line.
-
-List Comprehensions
+#### List Comprehensions
 
 List comprehensions provide a concise way to create new lists based on existing ones. They are a powerful tool for manipulating lists.
 

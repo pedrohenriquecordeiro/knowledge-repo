@@ -64,3 +64,36 @@ numbers = [1, 2, 3, 4, 5]
 squared_numbers = [number * number for number in numbers]  # squares each number in the list
 ```
 This code creates a new list squared_numbers containing the squares of all the elements in the numbers list.
+
+#### All() and Any()
+
+The methods all() and any() are commonly used with lists to check conditions on all or any elements within a sequence (like a list, tuple, or string).
+
+1. all(iterable):
+
+The all() function takes an iterable (like a list) as input and returns True only if all the elements in the iterable evaluate to True. If even a single element is False or evaluates to a falsy value (like 0, empty string, None), the function returns False.
+
+Example:
+
+```Python
+numbers = [1, 2, 3, 4, 5]
+all_positive = all(number > 0 for number in numbers)  # True (all numbers are positive)
+
+mixed_data = [True, 2, "hello", None]
+all_true = all(mixed_data)  # False (None evaluates to False)
+```
+
+2. any(iterable):
+
+The any() function also takes an iterable as input and returns True if any of the elements in the iterable evaluate to True. If all elements are False or falsy values, the function returns False.
+
+Example:
+
+```Python
+numbers = [1, 2, 3, 0, -1]
+any_positive = any(number > 0 for number in numbers)  # True (at least 1 number is positive)
+
+empty_list = []
+any_element = any(empty_list)  # False (empty list has no truthy elements)
+```
+

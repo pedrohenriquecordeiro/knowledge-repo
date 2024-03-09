@@ -9,7 +9,7 @@ clear(): Limpa a lista, removendo todos os elementos.
 Exemplo:
 
 ```Python
-Cria uma lista
+#  Cria uma lista
 lista = ["banana", "maçã", "laranja"]
 
 Adiciona um elemento ao final da lista

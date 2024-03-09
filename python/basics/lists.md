@@ -8,7 +8,7 @@ pop(indice): Remove o elemento da lista na posição específica e o retorna.
 clear(): Limpa a lista, removendo todos os elementos.
 Exemplo:
 
-``
+```Python
 Cria uma lista
 lista = ["banana", "maçã", "laranja"]
 
@@ -37,7 +37,7 @@ print(lista)  Saída: ['banana', 'maçã', 'abacaxi', 'kiwi', 'morango']
 Limpa a lista
 lista.clear()
 print(lista)  Saída: []
-``
+```
 
 Acesso a Elementos:
 
@@ -47,7 +47,7 @@ count(elemento): Retorna o número de ocorrências do elemento na lista.
 get(indice, valor_padrao): Retorna o elemento na posição 'indice' ou o valor 'valor_padrao' se o índice estiver fora da lista.
 Exemplo:
 
-Python``
+Python```
 Cria uma lista
 lista = [10, 20, 30, 40, 50]
 
@@ -66,7 +66,7 @@ print(numero_ocorrencias)  Saída: 1
 Retorna o elemento na posição 'indice' ou o valor 'valor_padrao' se o índice estiver fora da lista
 elemento_ou_padrao = lista.get(7, "Índice fora da lista")
 print(elemento_ou_padrao)  Saída: "Índice fora da lista"
-``
+```
 
 Operações com Listas:
 
@@ -75,7 +75,7 @@ Operações com Listas:
 in (elemento, lista): Verifica se o elemento está presente na lista, retornando True se estiver e False se não estiver.
 Exemplo:
 
-Python``
+```Python
 Cria duas listas
 lista1 = [1, 2, 3]
 lista2 = [4, 5, 6]
@@ -87,4 +87,4 @@ print(lista_concatenada)  Saída: [1, 2, 3, 4, 5, 6]
 Repete a lista 'n' vezes
 lista_repetida = lista1 * 3
 print(lista_repetida)  
-``
+```

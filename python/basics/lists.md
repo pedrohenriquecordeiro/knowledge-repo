@@ -96,4 +96,3 @@ any_positive = any(number > 0 for number in numbers)  # True (at least 1 number 
 empty_list = []
 any_element = any(empty_list)  # False (empty list has no truthy elements)
 ```
-

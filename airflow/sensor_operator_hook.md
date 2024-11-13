@@ -5,7 +5,7 @@ O Apache Airflow é uma poderosa plataforma de orquestração de dados que nos a
 
 ---
 
-## 1. Sensors: Esperando por Eventos  
+## 1. Sensors: Espera por Eventos  
 
 Um **Sensor** é um tipo especial de *Operator* que “espera” por um evento específico antes de prosseguir com o fluxo. Ele verifica continuamente se determinada condição foi atendida, como a chegada de um arquivo ou a conclusão de uma tarefa externa.  
 
@@ -27,7 +27,7 @@ wait_for_file = S3KeySensor(
 
 Esse Sensor só permitirá que o fluxo continue quando o arquivo especificado for encontrado.
 
-## 2. Operators: Executando Tarefas
+## 2. Operators: Executa Tarefas
 
 Operators são responsáveis por realizar tarefas específicas, como rodar uma query SQL, executar um script Python ou até mesmo interagir com APIs externas. Eles são os blocos de construção principais de qualquer DAG no Airflow.
 
@@ -47,7 +47,7 @@ run_query = PostgresOperator(
 
 Este Operator se conecta ao banco Postgres e executa a query SQL definida.
 
-## 3. Hooks: Conectando-se a Sistemas Externos
+## 3. Hooks: Conecta a Sistemas Externos
 
 Hooks são interfaces que facilitam a conexão com sistemas externos, como bancos de dados, APIs ou serviços de nuvem. Eles geralmente são usados dentro de Operators para executar ações específicas em sistemas externos.
 
@@ -63,7 +63,7 @@ def upload_to_s3():
     s3_hook.load_string(
         string_data='Hello, Airflow!',
         key='uploads/hello.txt',
-        bucket_name='meu-bucket'
+        bucket_name='nome-bucket'
     )
 ```
 

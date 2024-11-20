@@ -8,7 +8,7 @@ Se você já trabalha com o Apache Airflow, sabe que tudo começa pelas **DAGs (
 
 Uma DAG nada mais é do que um gráfico que organiza tarefas dentro de um fluxo de trabalho. Ela define as dependências entre as tarefas e garante que elas sejam executadas na ordem certa. O "Acyclic" do nome significa que não pode haver ciclos, ou seja, uma tarefa não pode depender de si mesma.
 
-<img src="workflow-group-dags.png" alt="dag" width=“100%">
+<img src="workflow-group-dags.png" alt="dag" width="50%">
 
 Na arquitetura do Airflow:
 - O **Scheduler** lê as DAGs e decide quais tarefas precisam ser executadas.

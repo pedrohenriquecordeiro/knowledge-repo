@@ -1,4 +1,4 @@
-# **DAG no Apache Airflow?**
+# **DAG no Apache Airflow**
 
 Se você já trabalha com o Apache Airflow, sabe que tudo começa pelas **DAGs (Directed Acyclic Graphs)**. Elas são a base da ferramenta e ajudam a organizar o que será feito, quando e em que ordem. Vamos entender o que é uma DAG, os principais parâmetros que você pode configurar, como os decorators se relacionam com a criação de DAGs e, claro, conferir um exemplo prático de código.
 

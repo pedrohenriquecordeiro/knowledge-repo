@@ -88,6 +88,7 @@ default_args = {
     catchup           = False,                        # Não compensa execuções pendentes
     tags              = ["data-engineering", "ETL"],  # Categoriza o DAG
     orientation       = "TB",                         # Layout da visualização (de cima para baixo)
+    default_args      = default_args
 )
 def data_pipeline():
 

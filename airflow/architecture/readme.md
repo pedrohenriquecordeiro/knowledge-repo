@@ -89,11 +89,4 @@ volumes:
   airflow_data:
 ```
 
-## Explicação dos Componentes:
-- **webserver**: Serve a interface gráfica do Airflow, permitindo que os usuários gerenciem e monitorem DAGs e tarefas.
-- **scheduler**: Organiza e agenda as tarefas dos DAGs, garantindo que elas sejam executadas no momento certo.
-- **redis**: Fila de mensagens que permite a comunicação eficiente entre o Scheduler e os Workers.
-- **postgres**: Banco de dados para armazenar metadados, status das tarefas e histórico das execuções.
-- **worker**: Responsável por executar as tarefas atribuídas pelo Scheduler.
-
 Esse `docker-compose.yaml` é um exemplo prático que implementa a arquitetura do Airflow, pronto para ser usado e ajustado conforme a necessidade.

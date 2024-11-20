@@ -60,51 +60,63 @@ No Python, um **decorator** é uma função que modifica o comportamento de outr
 Aqui está um exemplo simples de uma DAG no Airflow, usando operadores Bash e Python.
 
 ```python
-from airflow import DAG  # Importa a classe DAG para criar o fluxo de trabalho
-from airflow.decorators import dag, task  # Importa o decorator @dag para simplificar a criação do DAG
-from airflow.operators.bash import BashOperator  # Operador para executar comandos Bash
+import json
+from airflow import DAG                              # Importa a classe DAG para criar o fluxo de trabalho
+from airflow.decorators import dag, task             # Importa o decorator @dag para simplificar a criação do DAG
+from airflow.operators.bash import BashOperator      # Operador para executar comandos Bash
 from airflow.operators.python import PythonOperator  # Operador para usar funções Python
-from datetime import datetime, timedelta  # Gerencia datas e intervalos de tempo
+from datetime import datetime, timedelta             # Gerencia datas e intervalos de tempo
 
 # Configura os argumentos padrão para todas as tarefas do DAG
 default_args = {
-    "owner": "airflow",  # Indica o responsável pelo DAG
-    "retries": 2,  # Número de vezes que a tarefa será reexecutada em caso de falha
-    "retry_delay": timedelta(minutes=5),  # Tempo de espera entre tentativas
+    "owner": "data_team",                   # Nome do responsável ou time que mantém o DAG
+    "retries": 3,                           # Número de vezes que a tarefa será reexecutada em caso de falha
+    "retry_delay": timedelta(minutes=10),   # Intervalo entre tentativas de reexecução
+    "email_on_failure": True,               # Envia e-mail em caso de falha
+    "email_on_retry": True,                 # Envia e-mail em caso de reexecução
+    "email": ["data.team@example.com"],     # Lista de destinatários para alertas
 }
 
 # Criação do DAG com o decorator
 @dag(
-    dag_id="dag_name",  # Nome único do DAG
-    description="Exemplo de DAG com operadores Python e Bash",
-    schedule_interval="@daily",  # Frequência de execução (uma vez por dia)
-    start_date=datetime(2023, 11, 1),  # Data inicial para execução
-    catchup=False,  # Não compensa execuções pendentes
-    tags=["data-science", "treinamento"],  # Categoriza o DAG
-    orientation="LR",  # Layout da visualização (esquerda para direita)
+    dag_id            = "daily_data_pipeline",  # Nome único do DAG
+    description       = "Pipeline diário de ingestão e transformação de dados",
+    schedule_interval = "@daily",                     # Frequência de execução (uma vez por dia)
+    start_date        = datetime(2024, 11, 1),        # Data inicial para execução
+    catchup           = False,                        # Não compensa execuções pendentes
+    tags              = ["data-engineering", "ETL"],  # Categoriza o DAG
+    orientation       = "TB",                         # Layout da visualização (de cima para baixo)
 )
-def exemplo_dag():
+def data_pipeline():
 
-    # Tarefa Bash
-    tarefa_bash = BashOperator(
-        task_id="mostra_data",  # Nome da tarefa
-        bash_command="date",  # Comando Bash que será executado
+    # Tarefa Bash: Baixa dados de uma API pública
+    download_data = BashOperator(
+        task_id="baixar_dados",  # Nome da tarefa
+        bash_command="curl -o /tmp/data.json https://api.exemplo.com/dados",  # Comando para baixar os dados
     )
 
-    # Tarefa Python
-    def funcao_python():
-        print("Executando tarefa Python no Airflow!")
+    # Tarefa Python: Processa os dados baixados
+    def process_data():
+        with open("/tmp/data.json", "r") as file:
+            data = json.load(file)
+            print(f"Processando {len(data)} registros!")
 
-    tarefa_python = PythonOperator(
-        task_id="tarefa_python",  # Nome da tarefa
-        python_callable=funcao_python,  # Função Python que será executada
+    process_task = PythonOperator(
+        task_id="processar_dados",  # Nome da tarefa
+        python_callable=process_data,  # Função Python que será executada
     )
 
-    # Define a ordem das tarefas: tarefa_bash -> tarefa_python
-    tarefa_bash >> tarefa_python
+    # Tarefa Bash: Move os dados processados para uma pasta de backup
+    backup_data = BashOperator(
+        task_id="backup_dados",  # Nome da tarefa
+        bash_command="mv /tmp/data.json /tmp/backup/data_{{ ds }}.json",  # Comando para mover o arquivo para backup
+    )
+
+    # Define a ordem das tarefas: download_data -> process_task -> backup_data
+    download_data >> process_task >> backup_data
 
 # Instancia o DAG
-dag = exemplo_dag()
+dag = data_pipeline()
 ```
 
 

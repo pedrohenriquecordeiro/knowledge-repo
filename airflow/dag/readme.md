@@ -49,13 +49,13 @@ Ao criar uma DAG, você pode configurar vários parâmetros importantes. Aqui es
 
 
 
-## **O Que é um Decorator?**
+### **O Que é um Decorator?**
 
 No Python, um **decorator** é uma função que modifica o comportamento de outra função ou método. No Airflow, decorators simplificam a criação de DAGs e tarefas. Por exemplo, ao usar o `@dag` decorator, você pode transformar uma função Python em uma DAG, o que torna o código mais limpo e intuitivo.
 
 
 
-## **Exemplo de Código**
+### **Exemplo de Código**
 
 Aqui está um exemplo simples de uma DAG no Airflow, usando operadores Bash e Python.
 

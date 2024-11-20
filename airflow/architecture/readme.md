@@ -1,6 +1,8 @@
+### Arquitetura do Apache Airflow
+
 O **Apache Airflow** conecta vários componentes que trabalham juntos para orquestrar, executar e monitorar fluxos de trabalho de forma eficiente. Aqui vai uma explicação de como tudo isso acontece.
 
-![Arquitetura Airflow](airflow.JPG "Arquitetura Airflow")
+<img src="airflow.JPG" alt="Arquitetura Airflow" width="70%">
 
 Tudo começa com o **Web Server**, onde os usuários interagem com o Airflow. É ali que você gerencia e monitora os DAGs (os fluxos de trabalho) e suas tarefas. Dá pra iniciar ou pausar workflows, consultar logs e acompanhar o status de cada execução. Em segundo plano, o Web Server puxa informações do **Database**, que guarda tudo: DAGs, tarefas, logs e histórico de execuções.
 
@@ -10,9 +12,9 @@ A **Queue**, normalmente operando com Redis ou RabbitMQ, garante que as tarefas 
 
 No fim das contas, tudo isso se integra perfeitamente: os usuários gerenciam os DAGs pelo Web Server, o Scheduler cuida de organizar e agendar as tarefas, e os Workers executam o que foi pedido. Essa estrutura modular e escalável permite que você use o Airflow tanto para projetos simples quanto para pipelines massivos, sem complicação.
 
-### Docker Compose para Arquitetura do Apache Airflow
+### Docker Compose 
 
-Aqui está um exemplo de um arquivo `docker-compose.yaml` que reflete a arquitetura do Airflow. Cada componente está documentado diretamente no arquivo YAML.
+Aqui está um exemplo de um arquivo `docker-compose.yaml` que reflete a arquitetura do Airflow.
 
 ```yaml
 version: '3.8'

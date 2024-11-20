@@ -2,7 +2,7 @@
 
 O **Apache Airflow** conecta vários componentes que trabalham juntos para orquestrar, executar e monitorar fluxos de trabalho de forma eficiente. Aqui vai uma explicação de como tudo isso acontece.
 
-<img src="airflow.JPG" alt="Arquitetura Airflow" width="70%">
+<img src="airflow.JPG" alt="Arquitetura Airflow" width="50%">
 
 Tudo começa com o **Web Server**, onde os usuários interagem com o Airflow. É ali que você gerencia e monitora os DAGs (os fluxos de trabalho) e suas tarefas. Dá pra iniciar ou pausar workflows, consultar logs e acompanhar o status de cada execução. Em segundo plano, o Web Server puxa informações do **Database**, que guarda tudo: DAGs, tarefas, logs e histórico de execuções.
 

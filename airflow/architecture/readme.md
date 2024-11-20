@@ -10,7 +10,7 @@ O **Scheduler** é o cérebro do Airflow. Ele decide quais tarefas precisam ser 
 
 A **Queue**, normalmente operando com Redis ou RabbitMQ, garante que as tarefas sejam processadas na ordem certa. Os **Workers** pegam essas tarefas, executam o que for necessário (como rodar scripts ou consultas SQL) e depois atualizam o **Database** com o status da execução — seja sucesso ou falha.
 
-No fim das contas, tudo isso se integra perfeitamente: os usuários gerenciam os DAGs pelo Web Server, o Scheduler cuida de organizar e agendar as tarefas, e os Workers executam o que foi pedido. Essa estrutura modular e escalável permite que você use o Airflow tanto para projetos simples quanto para pipelines massivos, sem complicação.
+No fim das contas, tudo isso se integra perfeitamente: os usuários gerenciam os DAGs pelo Web Server, o Scheduler cuida de organizar e agendar as tarefas, e os Workers executam o que foi pedido. Essa estrutura modular e escalável permite que você use o Airflow tanto para projetos simples quanto para pipelines massivos.
 
 ### Docker Compose 
 

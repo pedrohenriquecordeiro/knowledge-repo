@@ -1,6 +1,6 @@
 O **Apache Airflow** conecta vários componentes que trabalham juntos para orquestrar, executar e monitorar fluxos de trabalho de forma eficiente. Aqui vai uma explicação de como tudo isso acontece.
 
-![Texto alternativo](URL-da-imagem "Título opcional")
+![Arquitetura Airflow](airflow.JPG "Arquitetura Airflow")
 
 Tudo começa com o **Web Server**, onde os usuários interagem com o Airflow. É ali que você gerencia e monitora os DAGs (os fluxos de trabalho) e suas tarefas. Dá pra iniciar ou pausar workflows, consultar logs e acompanhar o status de cada execução. Em segundo plano, o Web Server puxa informações do **Database**, que guarda tudo: DAGs, tarefas, logs e histórico de execuções.
 
@@ -14,7 +14,7 @@ No fim das contas, tudo isso se integra perfeitamente: os usuários gerenciam os
 
 Aqui está um exemplo de um arquivo `docker-compose.yaml` que reflete a arquitetura do Airflow. Cada componente está documentado diretamente no arquivo YAML.
 
-+++yaml
+```yaml
 version: '3.8'
 
 services:
@@ -85,7 +85,7 @@ services:
 volumes:
   # Volume para persistir os DAGs e logs do Airflow
   airflow_data:
-+++
+```
 
 ## Explicação dos Componentes:
 - **webserver**: Serve a interface gráfica do Airflow, permitindo que os usuários gerenciem e monitorem DAGs e tarefas.

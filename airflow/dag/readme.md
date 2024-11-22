@@ -124,10 +124,10 @@ dag = data_pipeline()
 
 
 
-## **Como os DAGs se Integram com o Airflow**
+## **Como as DAGs se Integram com o Airflow**
 
-1. O código do DAG é salvo na pasta de DAGs, que o Scheduler monitora.
-2. O **Scheduler** lê o DAG e organiza as tarefas com base no intervalo configurado.
+1. O código da DAG é salvo na pasta de DAGs, que o **Scheduler** monitora.
+2. O **Scheduler** lê a DAG e organiza as tarefas com base no intervalo configurado.
 3. As tarefas são enviadas para a fila e executadas pelos **Workers**.
-4. O **Web Server** mostra o status do DAG e das tarefas em tempo real.
+4. O **Web Server** mostra o status da DAG e das tarefas em tempo real.
 

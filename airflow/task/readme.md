@@ -7,6 +7,8 @@ No **Airflow**, uma **task** é a menor unidade de trabalho em um fluxo de dados
 - **DAG (Directed Acyclic Graph):**  
   A DAG organiza as tasks em uma estrutura hierárquica e define como elas se conectam e a ordem de execução, mas não executa diretamente as tasks. Cada DAG é composta por uma ou mais tasks.  
 
+<img src="task.png" alt="task" width="75%">
+
 - **Executor:**  
   O executor é o componente responsável por gerenciar a execução das tasks. Ele decide como as tasks são agendadas e distribuídas para serem executadas (ex.: `LocalExecutor`, `CeleryExecutor`, ou `KubernetesExecutor`). O tipo de executor determina a escala e o paralelismo da execução das tasks.
 

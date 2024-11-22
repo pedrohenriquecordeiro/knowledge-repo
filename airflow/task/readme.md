@@ -17,7 +17,7 @@ No **Airflow**, uma **task** é a menor unidade de trabalho em um fluxo de dados
 
   **Exemplo:**
 
-  +++
+  ```
   from airflow.operators.python import PythonOperator
 
   def my_task_function_1():
@@ -37,7 +37,7 @@ No **Airflow**, uma **task** é a menor unidade de trabalho em um fluxo de dados
       python_callable=my_task_function_2,
       dag=my_dag
   )
-  +++
+  ```
 
 - **Task Instance:**  
   Quando uma DAG é executada, uma **task instance** é criada para cada execução da task dentro de um intervalo de tempo específico. Ela representa a execução de uma task em um contexto específico.
@@ -50,9 +50,9 @@ No **Airflow**, uma **task** é a menor unidade de trabalho em um fluxo de dados
 
   **Exemplo:**
 
-  +++
+  ```
   task_1 >> task_2  # task_1 deve ser executada antes de task_2
-  +++
+  ```
 
 ## 3. Estados das Tasks
 

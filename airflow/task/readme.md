@@ -12,7 +12,7 @@ No **Airflow**, uma **task** é a menor unidade de trabalho em um fluxo de dados
 
 ## 2. Task Definition, Task Instance e Task Dependencies
 
-- **Task Definition:**  
+### **Task Definition:**  
   A definição de uma task acontece no código Python que cria a DAG. Ela especifica o operador (ex.: `PythonOperator`, `BashOperator`), parâmetros, e outras configurações necessárias para executar a tarefa.
 
   **Exemplo:**
@@ -39,13 +39,13 @@ No **Airflow**, uma **task** é a menor unidade de trabalho em um fluxo de dados
   )
   ```
 
-- **Task Instance:**  
+### **Task Instance:**  
   Quando uma DAG é executada, uma **task instance** é criada para cada execução da task dentro de um intervalo de tempo específico. Ela representa a execução de uma task em um contexto específico.
 
   **Exemplo:**  
   Se uma DAG está programada para rodar diariamente, e a task `my_task_1` pertence a essa DAG, haverá uma task instance para cada execução diária.
 
-- **Task Dependencies:**  
+### **Task Dependencies:**  
   As dependências entre tasks são definidas explicitamente no código, indicando a ordem de execução.  
 
   **Exemplo:**
